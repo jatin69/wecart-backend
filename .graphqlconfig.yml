@@ -1,0 +1,12 @@
+# this file is needed to support custom configurations for generated files and prisma.yml
+
+projects:
+  app:
+    schemaPath: "src/typedefs.js"
+    extensions:
+      endpoints:
+        default: "http://localhost:${env:SERVER_PORT}"
+  prisma:
+    schemaPath: "database/generated/prisma.graphql"
+    extensions:
+      prisma: "database/prisma.yml"

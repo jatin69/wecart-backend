@@ -1,0 +1,24 @@
+directive @auth(admin: Boolean) on FIELD_DEFINITION
+
+type Query {
+	user(userId: ID!): User
+	users: [User!]! @auth
+	login(email: String!, password: String!): LoginResponse
+}
+
+type Mutation {
+	createUser(name: String!, email: String!, password: String!): User
+}
+
+type User {
+	id: ID!
+	email: String!
+	name: String!
+	isAdmin: Boolean!
+}
+
+type LoginResponse {
+	user: User
+	token: String
+	message: String!
+}
