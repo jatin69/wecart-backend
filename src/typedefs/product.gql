@@ -1,0 +1,24 @@
+type Query {
+	products: [Product!]
+	product(productId: ID!): Product 
+}
+
+type Mutation {
+	createProduct(name: String!, price: Float!,  description: String): Product!
+	deleteProduct(productId: ID!): Product 
+}
+
+type Product {
+	id: ID!
+	name: String!
+	description: String
+	price: Float! 
+	images: [ProductImage!]!
+}
+
+type ProductImage {
+	id: ID!
+	title: String!
+	path: String!
+	product: Product! 
+}

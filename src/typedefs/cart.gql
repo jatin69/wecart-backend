@@ -1,0 +1,37 @@
+type Query {
+	carts: [Cart!]
+	cart(cartId: ID!): Cart 
+}
+
+type Mutation {
+	createCart(name: String!, memberIds: [ID!]): Cart @auth
+	
+	addCartMember(userId: ID!): [User!] @auth
+	removeCartMember(userId: ID!): [User!] @auth
+
+	addProductToCart(cartId: ID!, productId: ID!): Product @auth
+	removeProductFromCart(cartId: ID!, productId: ID!): [Product!] @auth
+
+	promoteToLeader(userId: ID!): [User!] @auth
+	demoteLeader(userId: ID!): [User!] @auth
+}
+
+type Cart {
+	id: ID!
+	name: String!	
+	members: [CartMember!]!
+	cartItems: [CartItem!]!
+}
+
+type CartMember {
+	id: ID!
+	cart: Cart!
+	member: User!
+	isLeader: Boolean!
+}
+
+type CartItem {
+  id: ID!
+  quantity: Int!
+  product: Product!
+}

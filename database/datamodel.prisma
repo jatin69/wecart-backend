@@ -4,4 +4,56 @@ type User {
 	email: String! @unique
 	password: String!
 	isAdmin: Boolean @default(value: false)
+	memberCarts: [CartMember!] @relation(name: "UserToCartMember")
+	defaultCart: Cart @relation(name: "DefaultCart")
+}
+
+type Cart {
+	id: ID! @id
+	name: String!	
+	members: [CartMember!] @relation(name:"CartToCartMember")
+	cartItems: [CartItem!]
+}
+
+type CartMember {
+	id: ID! @id
+	cart: Cart! @relation(link: INLINE, name: "CartToCartMember")
+	member: User! @relation(link: INLINE, name: "UserToCartMember") 
+	isLeader: Boolean! @default(value: false)
+}
+
+type CartItem {
+  id: ID! @id
+  quantity: Int! @default(value: 1)
+  product: Product!
+}
+
+type Product {
+	id: ID! @id
+	name: String!
+	description: String
+	price: Float! 
+	images: [ProductImage!]
+}
+
+type ProductImage {
+	id: ID! @id
+	title: String!
+	path: String!
+	product: Product! 
+}
+ 
+type Order {
+	id: ID! @id
+	orderProducts: [OrderProduct!]!
+	amount: Float!
+	orderDate: DateTime!
+	user: User!
+}
+
+type OrderProduct {
+  id: ID! @id
+  quantity: Int! @default(value: 1)
+  product: Product!
+  order: Order!
 }

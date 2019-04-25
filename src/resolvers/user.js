@@ -31,12 +31,35 @@ const userResolver = {
 		},
 	},
 	Mutation: {
-		createUser(_, { name, email, password }, { db }) {
+		async createUser(_, { name, email, password }, { db }) {
+			// const cart = await db.mutation.createCart({
+			// 	data: {
+			// 		name: `Personal Cart - ${name}`, // Personal Cart - User Name
+			// 	},
+			// });
+			// console.log(cart);
+			// const memberCart = await db.mutation.createCartMember({
+			// 	data: {
+			// 		cart: {
+			// 			connect: { id: cart.id }
+			// 		},
+			// 		member: {
+			// 			connect: { id: user.id },
+			// 		},
+			// 	},
+			// });
+			// console.log("[" + memberCart + "]");
 			return db.mutation.createUser({
 				data: {
 					name,
 					email,
 					password: hashSync(password, 10),
+					// memberCarts: {
+					// 	connect: [{ id: memberCart.id }],
+					// },
+					// defaultCart: {
+					// 	connect: { id: cart.id },
+					// },
 					isAdmin: false,
 				},
 			});
@@ -44,4 +67,4 @@ const userResolver = {
 	},
 };
 
-module.exports = userResolver;
+exports.default = userResolver;

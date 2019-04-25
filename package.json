@@ -16,6 +16,7 @@
 		"graphql": "^14.2.1",
 		"graphql-cli": "^3.0.11",
 		"graphql-import": "^0.7.1",
+		"graphql-type-datetime": "^0.2.3",
 		"jsonwebtoken": "^8.5.1",
 		"merge-graphql-schemas": "^1.5.8",
 		"prisma-binding": "^2.3.10",

@@ -12,9 +12,11 @@ type Mutation {
 
 type User {
 	id: ID!
-	email: String!
 	name: String!
+	email: String! 
 	isAdmin: Boolean!
+	memberCarts: [Cart!]	
+	defaultCart: Cart
 }
 
 type LoginResponse {
