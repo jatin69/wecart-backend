@@ -3,5 +3,5 @@ node_modules
 yarn-error.log
 
 # commit these after project is finalized
-yarn.lock       
-generated
+#yarn.lock       
+#generated
