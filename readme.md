@@ -78,9 +78,30 @@ WeCart is an eCommerce platform providing shared cart feature.
 	}
 	```
 
-### Development
+## Development
 
-## Editors and Extensions
+### Editors and Extensions
 
 - Recommended editor is `VS Code`
 - Recommended extension is [`graphql-for-vscode`](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode). This extension works across files and works well. Install the extension dependencies, and other steps mentioned on the extension page. 
+
+## References
+
+### Resources
+
+- [Graphql spec](https://graphql.github.io/graphql-spec/June2018/)
+- Example graphql API - [Github's Graph API explorer](https://developer.github.com/v4/explorer/)
+- `Frontend` [Let's learn to graphql](https://letslearngraphql.com/workshop/1)
+- `backend` [How to GraphQL](https://www.howtographql.com/basics/0-introduction/)
+- `backend` [Prisma - Getting Started](https://www.prisma.io/docs/get-started/01-setting-up-prisma-new-database-JAVASCRIPT-a002/)
+- `Udemy Course` Preview of [Udemy - The Modern GraphQL Bootcamp (Advanced Node.js)](https://www.youtube.com/watch?v=j3wbyAaLbDE)
+
+### some github links
+
+- [github.com/nareshbhatia/graphql-bookstore](github.com/nareshbhatia/graphql-bookstore)
+- [github.com/SaraVieira/graphql-workshop](github.com/SaraVieira/graphql-workshop)
+- [github.com/FrontendMasters/intro-to-graphql](github.com/FrontendMasters/intro-to-graphql)
+- [github.com/prisma/prisma-examples](github.com/prisma/prisma-examples)
+- [github.com/siddhant1/E-Shopp-Backend](github.com/siddhant1/E-Shopp-Backend)
+- [github.com/howtographql/graphql-js](github.com/howtographql/graphql-js)
+- [github.com/cpenarrieta/prisma-apollo-2.0](github.com/cpenarrieta/prisma-apollo-2.0)
